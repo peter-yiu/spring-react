@@ -14,6 +14,22 @@ pnpm install axios
 pnpm install sonner
 ```
 
+
+3. init database
+
+create your database use [local postgres](https://wiki.postgresql.org/wiki/Homebrew) or [vercel-postgres](https://vercel.com/docs/storage/vercel-postgres) or [supabase](https://supabase.com/)
+
+create tables from sql at `data/install.sql`
+
+4. set environmental values
+
+put `.env.local` under `frondend` root dir with values list below
+
+```
+WEB_BASE_URI=""
+NEXT_PUBLIC_BACKEND_BASE_URI="http://localhost:8080"
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
