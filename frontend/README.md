@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 First, run the development server:
+pnpm create next-app
 
 ```bash
 pnpm dev
@@ -12,6 +13,8 @@ pnpm install lucide-react
 pnpm install classnames
 pnpm install axios
 pnpm install sonner
+pnpm install @vercel/analytics
+
 ```
 
 
