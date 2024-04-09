@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/themes": "^3.0.2",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.8",
     "classnames": "^2.5.1",
     "lucide-react": "^0.365.0",
