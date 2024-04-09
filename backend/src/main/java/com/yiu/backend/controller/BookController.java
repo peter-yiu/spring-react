@@ -20,23 +20,35 @@ public class BookController {
     }
 
     @PostMapping
-    public Book addBook(@RequestBody Book book) {
-        return bookService.addBook(book);
+    public Object addBook(@RequestBody Book book) {
+        Map<String,Object> returnData=new LinkedHashMap<String, Object>();
+        returnData.put("book",bookService.addBook(book));
+        return  ApiResponse.success(returnData);
     }
 
     @GetMapping("/{id}")
-    public Book getBookById(@PathVariable Integer id) {
-        return bookService.getBookById(id);
+    public Object getBookById(@PathVariable Integer id) {
+
+
+        Map<String,Object> returnData=new LinkedHashMap<String, Object>();
+        returnData.put("book",bookService.getBookById(id));
+        return  ApiResponse.success(returnData);
     }
 
     @PutMapping("/{id}")
-    public Book updateBook(@PathVariable Integer id, @RequestBody Book book) {
-        return bookService.updateBook(id, book);
+    public Object updateBook(@PathVariable Integer id, @RequestBody Book book) {
+
+         book= bookService.updateBook(id, book);
+
+        Map<String,Object> returnData=new LinkedHashMap<String, Object>();
+        returnData.put("book",book);
+        return  ApiResponse.success(returnData);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBook(@PathVariable Integer id) {
+    public Object deleteBook(@PathVariable Integer id) {
         bookService.deleteBook(id);
+        return ApiResponse.success();
     }
 
     @GetMapping

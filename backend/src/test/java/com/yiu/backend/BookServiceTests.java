@@ -3,7 +3,6 @@ package com.yiu.backend;
 
 import com.yiu.backend.model.Book;
 import com.yiu.backend.service.BookService;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -20,9 +19,9 @@ import java.util.List;
 
 @SpringBootTest
 @ActiveProfiles("dev")
-public class BookTests {
+public class BookServiceTests {
 
-    private static final Logger log = LoggerFactory.getLogger(BookTests.class);
+    private static final Logger log = LoggerFactory.getLogger(BookServiceTests.class);
 
     @Autowired
     private BookService bookService;
