@@ -30,6 +30,9 @@ WEB_BASE_URI=""
 NEXT_PUBLIC_BACKEND_BASE_URI="http://localhost:8080"
 ```
 
+Set Root Directory to  frontend
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
