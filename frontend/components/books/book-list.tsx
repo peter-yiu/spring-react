@@ -101,6 +101,7 @@ export default function BookList() {
             <Table.Root variant="surface" size="3">
                 <Table.Header>
                     <Table.Row>
+                        <Table.ColumnHeaderCell>ID</Table.ColumnHeaderCell>
                         <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
                         <Table.ColumnHeaderCell>Author</Table.ColumnHeaderCell>
                         <Table.ColumnHeaderCell>Isbn</Table.ColumnHeaderCell>
@@ -114,6 +115,7 @@ export default function BookList() {
                     {books.map(book => (
 
                         <Table.Row key={book.id} >
+                            <Table.Cell>{book.id}</Table.Cell>
                             <Table.Cell>{book.title}</Table.Cell>
                             <Table.Cell>{book.author}</Table.Cell>
                             <Table.Cell>{book.isbn}</Table.Cell>
