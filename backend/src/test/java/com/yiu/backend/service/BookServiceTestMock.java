@@ -2,7 +2,6 @@ package com.yiu.backend.service;
 
 import com.yiu.backend.model.Book;
 import com.yiu.backend.repository.BookRepository;
-import com.yiu.backend.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
