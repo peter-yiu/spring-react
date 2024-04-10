@@ -26,16 +26,16 @@ The ERD for the database consists of a single entity:
 
 The `Book` table stores information about books in the application.
 
-| Field             | Type        | Description                            |
-|-------------------|-------------|----------------------------------------|
-| id                | BIGINT      | Primary Key, Auto-increment            |
-| title             | VARCHAR(255)| Title of the book                      |
-| author            | VARCHAR(255)| Author of the book                     |
-| isbn              | VARCHAR(20) | ISBN (International Standard Book Number) of the book |
-| genre             | VARCHAR(100)| Genre of the book                      |
-| publication_date  | DATE        | Publication date of the book           |
-| description       | TEXT        | Description or summary of the book     |
-| file_path         | VARCHAR(255)| Path to the book file                  |
+| Field             | Type         | Description                            |
+|-------------------|--------------|----------------------------------------|
+| id                | INT          | Primary Key, Auto-increment            |
+| title             | VARCHAR(255) | Title of the book                      |
+| author            | VARCHAR(255) | Author of the book                     |
+| isbn              | VARCHAR(20)  | ISBN (International Standard Book Number) of the book |
+| genre             | VARCHAR(100) | Genre of the book                      |
+| publication_date  | DATE         | Publication date of the book           |
+| description       | TEXT         | Description or summary of the book     |
+| file_path         | VARCHAR(255) | Path to the book file                  |
 
 ## 3. Relationships
 
