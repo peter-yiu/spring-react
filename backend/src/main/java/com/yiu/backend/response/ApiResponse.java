@@ -45,10 +45,10 @@ public class ApiResponse implements Serializable {
         this.msg = msg;
     }
 
-    //todo update to getIsSucceed will be better 20211013  and ApiResult switch to ApiReturns,
+
     //have been update at healthone project
     public boolean getSuccess(){
-        return this.code == 1? true :false;
+        return this.code == ApiResponseCode.SUCCESS.getCode()? true :false;
     }
 
     public static ApiResponse success() {
@@ -71,7 +71,7 @@ public class ApiResponse implements Serializable {
     }
     public static ApiResponse failMessage(String message) {
         ApiResponse result = new ApiResponse();
-        result.setCode(0);
+        result.setCode(ApiResponseCode.FAILED.getCode());
         result.setMsg(message);
         return result;
     }

@@ -8,6 +8,7 @@ import java.util.List;
 public enum ApiResponseCode {
     /* 成功状态码 */
     SUCCESS(1, "success"),
+    FAILED(0, "failed"),
 
 
     /* 用户错误：1001-1999 */

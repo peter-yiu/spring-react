@@ -20,23 +20,29 @@ public class BookController {
     }
 
     @PostMapping
-    public Object addBook(@RequestBody Book book) {
+    public ApiResponse addBook(@RequestBody Book book) {
         Map<String,Object> returnData=new LinkedHashMap<String, Object>();
         returnData.put("book",bookService.addBook(book));
         return  ApiResponse.success(returnData);
     }
 
     @GetMapping("/{id}")
-    public Object getBookById(@PathVariable Integer id) {
+    public ApiResponse getBookById(@PathVariable Integer id) {
 
 
         Map<String,Object> returnData=new LinkedHashMap<String, Object>();
-        returnData.put("book",bookService.getBookById(id));
-        return  ApiResponse.success(returnData);
+        Book book=bookService.getBookById(id);
+        if(book != null){
+            returnData.put("book",book);
+            return  ApiResponse.success(returnData);
+        }else{
+            return ApiResponse.failMessage("Not Found Id:"+id.toString());
+        }
+
     }
 
     @PutMapping("/{id}")
-    public Object updateBook(@PathVariable Integer id, @RequestBody Book book) {
+    public ApiResponse updateBook(@PathVariable Integer id, @RequestBody Book book) {
 
          book= bookService.updateBook(id, book);
 
@@ -46,13 +52,13 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
-    public Object deleteBook(@PathVariable Integer id) {
+    public ApiResponse deleteBook(@PathVariable Integer id) {
         bookService.deleteBook(id);
         return ApiResponse.success();
     }
 
     @GetMapping
-    public Object getAllBooks() {
+    public ApiResponse getAllBooks() {
         List<Book> bookList= bookService.getAllBooks();
 
         Map<String,Object> returnData=new LinkedHashMap<String, Object>();

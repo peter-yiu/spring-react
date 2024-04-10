@@ -1,4 +1,4 @@
-package com.yiu.backend;
+package com.yiu.backend.springboot;
 
 
 import com.yiu.backend.model.Book;

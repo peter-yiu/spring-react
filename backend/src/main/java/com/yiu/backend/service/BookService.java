@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -26,17 +27,22 @@ public class BookService {
         return bookRepository.findById(id).orElse(null);
     }
 
-    public Book updateBook(Integer id, Book book) {
-        Book existingBook = bookRepository.findById(id).orElse(null);
-        if (existingBook != null) {
-            existingBook.setTitle(book.getTitle());
-            existingBook.setAuthor(book.getAuthor());
-            existingBook.setGenre(book.getGenre());
-            existingBook.setIsbn(book.getIsbn());
-            existingBook.setDescription(book.getGenre());
+    public Book updateBook(Integer id, Book updatedBook) {
+
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        if (optionalBook.isPresent()) {
+            Book existingBook = optionalBook.get();
+            existingBook.setTitle(updatedBook.getTitle());
+            existingBook.setAuthor(updatedBook.getAuthor());
+            existingBook.setIsbn(updatedBook.getIsbn());
+            existingBook.setGenre(updatedBook.getGenre());
+            existingBook.setDescription(updatedBook.getDescription());
             return bookRepository.save(existingBook);
+        } else {
+            throw new IllegalArgumentException("Book with id " + id + " not found");
         }
-        return null;
+
+
     }
 
     public void deleteBook(Integer id) {
@@ -52,7 +58,8 @@ public class BookService {
     }
 
     public List<Book> findAllByTitle(String title) {
-        return bookRepository.findAllByTitle(title);
+
+        return bookRepository.findAllByTitleContaining(title);
     }
 
 }
