@@ -102,8 +102,6 @@ export default function BookForm({ book,onSaveEditedBook }: Props) {
                             />
                         </label>
 
-                        <p>Name: {editingBook.title}</p>
-                        <p>Email: {editingBook.author}</p>
                     </Flex>
 
                     <Flex gap="3" mt="4" justify="end">
