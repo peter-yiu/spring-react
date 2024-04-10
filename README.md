@@ -130,6 +130,15 @@ open `http://localhost:3000` for preview
 - [Lucide](https://lucide.dev/) – Beautifully simple, pixel-perfect icons
 - [tailwindcss](https://tailwindcss.com/) for page building
 
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Backend Design](docs/backend_design.md)
+- [Database Design](docs/database_design.md)
+- [Test Cases](docs/test_cases.md)
+
+
 ## Other Things
 
 if this project is helpful to you, buy be a coffee.
